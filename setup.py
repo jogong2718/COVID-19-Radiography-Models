@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-  name="Covid-Radiography-Models",
+  name="COVID-19-Radiography-Models",
   author="Jonathan Gong",
   author_email="jonathangong2005@gmail.com",
   license="MIT license",
