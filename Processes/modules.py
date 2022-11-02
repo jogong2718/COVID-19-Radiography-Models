@@ -214,6 +214,7 @@ def segmentation_data(
   b = (normal_image_data_, normal_mask_data_)
   with open('normal_image_and_mask_.pkl', 'wb') as handle:
       pickle.dump(b, handle, protocol=pickle.HIGHEST_PROTOCOL)
+      
 def image_cropping(
   data_folder = data_folder_i
 ):
@@ -289,8 +290,49 @@ def shuffling_and_setting_data(
 
   pic_train, pic_test, label_train, label_test = train_test_split(np.asarray(all_IMAGES), np.asarray(all_LABELS), test_size= 0.2, train_size = 0.8, random_state=42)
 
-with open('test_everything_final_2.pkl', 'wb') as handle:
-    pickle.dump((pic_test, tf.keras.utils.to_categorical(label_test)), handle, protocol=pickle.HIGHEST_PROTOCOL)
+  with open('test_everything_final_2.pkl', 'wb') as handle:
+      pickle.dump((pic_test, tf.keras.utils.to_categorical(label_test)), handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-with open('train_everything_final_2.pkl', 'wb') as handle:
-    pickle.dump((pic_train, tf.keras.utils.to_categorical(label_train)), handle, protocol=pickle.HIGHEST_PROTOCOL)
+  with open('train_everything_final_2.pkl', 'wb') as handle:
+      pickle.dump((pic_train, tf.keras.utils.to_categorical(label_train)), handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+def segmentation_data_2(
+  data_folder = data_folder_i
+):
+  with open('covid_image_and_mask_.pkl', 'rb') as handle:
+    covid_everything = pickle.load(handle)
+
+  with open('normal_image_and_mask_.pkl', 'rb') as handle:
+      normal_everything = pickle.load(handle)
+
+  with open('pneumonia_image_and_mask_.pkl', 'rb') as handle:
+      pneumonia_everything = pickle.load(handle)
+
+  covid_images, covid_masks = covid_everything
+  covid_images = covid_images.tolist()
+  covid_masks = covid_masks.tolist()
+
+  normal_images, normal_masks = normal_everything
+  normal_images = normal_images.tolist()
+  normal_masks = normal_masks.tolist()
+
+  pneumonia_images, pneumonia_masks = pneumonia_everything
+  pneumonia_images = pneumonia_images.tolist()
+  pneumonia_masks = pneumonia_masks.tolist()
+
+  big_boi_images = covid_images+normal_images+pneumonia_images
+  big_boi_masks = covid_masks+normal_masks+pneumonia_masks
+
+  big_boi_images = np.asarray(big_boi_images)
+  big_boi_masks = np.asarray(big_boi_masks)
+
+  plt.imshow(big_boi_images[2020], cmap = 'binary')
+
+  plt.imshow(big_boi_masks[2020], cmap = 'binary')
+
+  pic_train = big_boi_images/255.
+
+  mask_test = big_boi_masks/255.
+
+  with open('image_segementation_data_final_og.pkl', 'wb') as handle:
+      pickle.dump((pic_train, mask_test), handle, protocol=pickle.HIGHEST_PROTOCOL)
