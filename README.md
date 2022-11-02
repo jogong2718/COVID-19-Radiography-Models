@@ -5,3 +5,10 @@ This is my classification model
 
 ![Image Segmentation Diagram](https://user-images.githubusercontent.com/82681643/199414409-15446b75-9b55-42a6-a68f-8284903053e8.png)
 This is my image segmentation model
+
+## Teammates
+- My partner for this project is Yiqiao Yin. You can find him at https://github.com/yiqiao-yin.
+- You can email me at jonathangong2005@gmail.com
+
+## User Manual
+TBA
