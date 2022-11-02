@@ -69,7 +69,7 @@ def segmentation_model(
       model = tf.keras.Model(inputs, outputs, name="U-Net")
       return model
 
-  input_shape = (128, 128, 1) # (128, 128, 1)
+  input_shape = (128, 128, 1)
   model = build_unet(input_shape)
 
   print(tf.keras.utils.plot_model(model, show_shapes=True))
@@ -87,7 +87,7 @@ def segmentation_model(
 
   # iou
   def iou_coef(y_true, y_pred, smooth=1):
-      intersection = K.sum(K.abs(y_true * y_pred), axis=[1, 2, 3]) # changed [1,2,3] to [1] 
+      intersection = K.sum(K.abs(y_true * y_pred), axis=[1, 2, 3])
       union = K.sum(y_true,[1, 2, 3])+K.sum(y_pred,[1, 2, 3])-intersection
       iou = K.mean((intersection + smooth) / (union + smooth), axis=0)
       return iou
