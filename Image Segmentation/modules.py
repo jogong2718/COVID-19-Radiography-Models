@@ -119,5 +119,4 @@ def segmentation_model(
   return {
     'model': model,
     'history': history
-    
   }
