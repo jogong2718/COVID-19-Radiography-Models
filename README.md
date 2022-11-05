@@ -26,6 +26,6 @@ To install this library:
 ```
 import Processes.modules
 import Classification.modules
-import Segmentation.modules
+import Image-Segmentation.modules
 ```
 
