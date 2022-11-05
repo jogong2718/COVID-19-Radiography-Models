@@ -12,13 +12,13 @@ from PIL import Image
 from sklearn.model_selection import train_test_split
 
 def acquire_kaggle_data(
-  covid_imgs = covid_imgs_i
-  covid_masks = covid_masks_i
-  normal_imgs = normal_imgs_i
-  normal_masks = normal_masks_i
-  pneumonia_imgs = pneumonia_imgs_i
-  pneumonia_masks = pneumonia_masks_i
-  data_folder = data_folder_i
+    covid_imgs = covid_imgs_i
+    covid_masks = covid_masks_i
+    normal_imgs = normal_imgs_i
+    normal_masks = normal_masks_i
+    pneumonia_imgs = pneumonia_imgs_i
+    pneumonia_masks = pneumonia_masks_i
+    data_folder = data_folder_i
 ):
   ## Get kaggle data
 
