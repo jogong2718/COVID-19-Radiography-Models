@@ -11,4 +11,21 @@ This is my image segmentation model
 - You can email me at jonathangong2005@gmail.com
 
 ## User Manual
-TBA
+Please use the following instructions and code to install
+
+Please install the COVID-19 Radiography Database from https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database
+
+Once downloaded, please save the files in your google drive
+
+To install this library:
+```
+# install this library
+!pip install git+https://github.com/jogong2718/COVID-19-Radiography-Models.git
+```
+
+```
+import Processes.modules
+import Classification.modules
+import Segmentation.modules
+```
+
