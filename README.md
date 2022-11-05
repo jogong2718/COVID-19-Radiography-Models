@@ -29,3 +29,4 @@ import Classification.modules
 import Image_Segmentation.modules
 ```
 
+When running Processes functions, make sure to include the need paths in the parameters 
