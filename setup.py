@@ -6,5 +6,5 @@ setup(
   author_email="jonathangong2005@gmail.com",
   license="MIT license",
   description="This package provides AI-driven solutions for Classification and Image Segmentation of Covid-19 X-rays",
-  packages=["Processes", "Image Segmentation", "Classification"]
+  packages=["Processes", "Image_Segmentation", "Classification"]
 )
