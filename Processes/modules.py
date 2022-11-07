@@ -12,13 +12,13 @@ from PIL import Image
 from sklearn.model_selection import train_test_split
 
 def acquire_kaggle_data(
-    covid_imgs = covid_imgs_i,
-    covid_masks = covid_masks_i,
-    normal_imgs = normal_imgs_i,
-    normal_masks = normal_masks_i,
-    pneumonia_imgs = pneumonia_imgs_i,
-    pneumonia_masks = pneumonia_masks_i,
-    data_folder = data_folder_i
+    covid_imgs,
+    covid_masks,
+    normal_imgs,
+    normal_masks,
+    pneumonia_imgs,
+    pneumonia_masks,
+    data_folder
 ):
     ## Get kaggle data
 
@@ -133,13 +133,13 @@ def acquire_kaggle_data(
         pickle.dump(c, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 def segmentation_data(
-    covid_imgs = covid_imgs_i,
-    covid_masks = covid_masks_i,
-    normal_imgs = normal_imgs_i,
-    normal_masks = normal_masks_i,
-    pneumonia_imgs = pneumonia_imgs_i,
-    pneumonia_masks = pneumonia_masks_i,
-    data_folder = data_folder_i
+    covid_imgs,
+    covid_masks,
+    normal_imgs,
+    normal_masks,
+    pneumonia_imgs,
+    pneumonia_masks,
+    data_folder
 ):
     ## Get kaggle data
 
@@ -216,7 +216,7 @@ def segmentation_data(
         pickle.dump(b, handle, protocol=pickle.HIGHEST_PROTOCOL)
         
 def image_cropping(
-    data_folder = data_folder_i
+    data_folder
 ):
     os.chdir(data_folder)
 
@@ -263,7 +263,7 @@ def image_cropping(
         pickle.dump(f, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 def shuffling_and_setting_data(
-    data_folder = data_folder_i
+    data_folder
 ):
     os.chdir(data_folder)
 
@@ -297,7 +297,7 @@ def shuffling_and_setting_data(
         pickle.dump((pic_train, tf.keras.utils.to_categorical(label_train)), handle, protocol=pickle.HIGHEST_PROTOCOL)
         
 def segmentation_data_2(
-    data_folder = data_folder_i
+    data_folder
 ):
     with open('covid_image_and_mask_.pkl', 'rb') as handle:
         covid_everything = pickle.load(handle)
