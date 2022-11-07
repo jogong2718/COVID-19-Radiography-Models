@@ -15,7 +15,7 @@ from google.colab import drive
 drive.mount('/content/drive')
 
 def segmentation_model(
-  data_folder = data_folder_i
+  data_folder
 ):
   os.chdir(data_folder)
 
