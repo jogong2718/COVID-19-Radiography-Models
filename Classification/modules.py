@@ -16,7 +16,7 @@ drive.mount('/content/drive')
 def classification_model(
   data_folder
 ):
-  os.chdir(data_folder')
+  os.chdir(data_folder)
 
   with open('test_everything_final_2.pkl', 'rb') as handle:
       test_everything = pickle.load(handle)
