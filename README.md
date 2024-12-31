@@ -1,5 +1,9 @@
 # Covid-Radiography-Models
 
+## Paper
+- See paper at [Paper Link](https://drive.google.com/file/d/1exyKbZ3_UELGx9ljU6Jza_wogi4mviVl/view)
+
+## Models
 ![Classification diagram](https://user-images.githubusercontent.com/82681643/199414405-97919ef9-9e3b-4f85-96d8-667d198d83b0.png)
 This is my classification model
 
